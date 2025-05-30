@@ -60,7 +60,7 @@ Projekt zrealizowano w czystym PHP 8+, z wykorzystaniem PostgreSQL, konteneryza
 
 ## Struktura bazy danych
 
-### Tabele
+# Tabele
 
 ```
 roles
@@ -114,11 +114,6 @@ emergency_contact
 * **Permissions**: `manage_users`, `manage_campers`, etc.
 * **Użytkownicy**: konta testowe z rolami.
 * **Kampery, destynacje, trasy**: przykładowe rekordy.
-
-## Transakcje i audyt
-
-* Procedura `prc__register_user` w transakcji o izolacji `READ COMMITTED`.
-* Wyzwalacz `trg_log_changes` rejestruje zmiany w tabelach w `tb_audit_log`.
 
 ## Struktura projektu
 
@@ -189,12 +184,12 @@ Implementacja: `ProfileController::exportDb()` uruchamia `pg_dump --no-owner --n
    ```bash
    type .\init.sql | docker exec -i kamper_db psql -U postgres -d kamper_app
    ```
-##Schemat bazy danych
+## Schemat bazy danych
 
 
 ![erd](images/ERD.png)
 
-### Zrzuty ekranu aplikacji CampTrail
+# Zrzuty ekranu aplikacji CampTrail
 
 ## 1. Autentykacja
 

@@ -1,3 +1,4 @@
+-- Views
 CREATE VIEW camper_insurance_view AS
   SELECT i.id, i.camper_id, c.name AS camper_name, i.insurer_name,
          i.policy_number, TO_CHAR(i.start_date, 'YYYY-MM-DD') AS start_date,

@@ -1,7 +1,6 @@
 SET client_encoding = 'UTF8';
 
 -- Drop triggers
-DROP TRIGGER IF EXISTS campers_audit ON campers;
 DROP TRIGGER IF EXISTS trg_update_timestamp ON campers;
 DROP TRIGGER IF EXISTS trg_update_timestamp_destinations ON destinations;
 DROP TRIGGER IF EXISTS trg_update_timestamp_routes ON routes;
@@ -12,7 +11,6 @@ DROP TRIGGER IF EXISTS users_after_insert_welcome ON users;
 DROP TRIGGER IF EXISTS routes_after_insert_notify ON routes;
 
 -- Drop functions
-DROP FUNCTION IF EXISTS audit_log() CASCADE;
 DROP FUNCTION IF EXISTS fn_add_notification(INTEGER, TEXT) CASCADE;
 DROP FUNCTION IF EXISTS set_updated_timestamp() CASCADE;
 DROP FUNCTION IF EXISTS trg_destinations_notify() CASCADE;
@@ -34,7 +32,6 @@ DROP VIEW IF EXISTS vw_user_profile;
 
 -- Drop tables
 DROP TABLE IF EXISTS amenities CASCADE;
-DROP TABLE IF EXISTS audit_logs CASCADE;
 DROP TABLE IF EXISTS camper_images CASCADE;
 DROP TABLE IF EXISTS campers CASCADE;
 DROP TABLE IF EXISTS destination_amenity CASCADE;
@@ -53,8 +50,6 @@ DROP TABLE IF EXISTS emergency_contact CASCADE;
 CREATE EXTENSION IF NOT EXISTS pgcrypto;
 
 -- 2 Tables
-
-
 
 CREATE TABLE roles (
   id   SERIAL PRIMARY KEY,

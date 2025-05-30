@@ -135,3 +135,13 @@ CREATE TABLE notifications (
   is_read    BOOLEAN NOT NULL DEFAULT FALSE,
   created_at TIMESTAMP NOT NULL DEFAULT NOW()
 );
+CREATE TABLE emergency_contact (
+    user_id      INT PRIMARY KEY
+                  REFERENCES users(id)
+                  ON DELETE CASCADE,
+    contact_name VARCHAR(255) NOT NULL,
+    phone        VARCHAR(20)  NOT NULL,
+    relation     VARCHAR(50)  NOT NULL,
+    created_at   TIMESTAMP    DEFAULT now(),
+    updated_at   TIMESTAMP    DEFAULT now()
+);

@@ -1,4 +1,17 @@
 -- Triggers and functions
+CREATE OR REPLACE FUNCTION set_emergency_contact_updated_at()
+RETURNS trigger AS $$
+BEGIN
+    NEW.updated_at := now();
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER trg_emergency_contact_updated_at
+BEFORE UPDATE ON emergency_contact
+FOR EACH ROW
+EXECUTE FUNCTION set_emergency_contact_updated_at();
+
 CREATE OR REPLACE FUNCTION set_updated_timestamp()
 RETURNS TRIGGER AS $$
 BEGIN
@@ -78,9 +91,8 @@ DECLARE origin_name TEXT; dest_name TEXT;
 BEGIN
   SELECT name INTO origin_name FROM destinations WHERE id = NEW.origin_id;
   SELECT name INTO dest_name FROM destinations WHERE id = NEW.destination_id;
-  PERFORM fn_add_notification(NEW.user_id, 'Dodano nową trasę: ' || origin_name || ' → ' || dest_name);
+  PERFORM fn_add_notification(NEW.user_id, 'Dodano nową trasę: ' || origin_name || ' - ' || dest_name);
   RETURN NEW;
 END;
 $$ LANGUAGE plpgsql;
 CREATE TRIGGER routes_after_insert_notify AFTER INSERT ON routes FOR EACH ROW EXECUTE PROCEDURE trg_routes_notify();
-
