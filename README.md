@@ -28,11 +28,11 @@ Projekt zrealizowano w czystym PHP 8+, z wykorzystaniem PostgreSQL, konteneryza
 
 ## Zabezpieczenia
 
-* **Hashowanie haseł**: bcrypt z saltingiem w `src/Repositories/UserRepository.php` i `src/Controllers/AuthController.php`.
+* **Hashowanie haseł**: bcrypt z saltingiem w `src/Controllers/ProfileController.php` i `src/Controllers/SecurityController.php`.
 * **Ochrona przed SQL Injection**: parametryzowane zapytania.
 * **Zarządzanie sesją**: `SessionManager.php` regeneruje identyfikator, ustawia timeout i zabezpieczenia ciasteczek.
 * **HTTPS**: wymuszanie SSL w `docker/nginx/nginx.conf`.
-* **Limity uploadu**: `client_max_body_size` w Nginx i `upload_max_filesize` w PHP-FPM.
+* **Limity uploadu**: `upload_max_filesize` w PHP-FPM.
 * **Content Security Policy (CSP)**: nagłówki w konfiguracji Nginx.
 
 ## Scenariusze użycia
