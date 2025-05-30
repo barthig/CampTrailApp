@@ -95,7 +95,7 @@ class SecurityController extends AppController
             $this->redirect('/register');
         }
 
-        $hash = password_hash($password, PASSWORD_DEFAULT);
+        $hash = password_hash($password, PASSWORD_BCRYPT);
         $this->userRepo->create([
             'email'         => $email,
             'username'      => $username,

@@ -12,10 +12,7 @@ use src\Controllers\DestinationController;
 use src\Controllers\RouteController;
 use src\Controllers\ProfileController;
 use src\Controllers\NotificationsController;
-use src\Controllers\PermissionController;
-use src\Controllers\RoleController;
 use src\Controllers\StatsController;
-use src\Controllers\NotificationController;
 use src\Controllers\AdminController;
 
 // Home and error
@@ -82,11 +79,5 @@ Router::post('notifications/mark-all-read',  NotificationsController::class, 'ma
 Router::post('notifications/delete',         NotificationsController::class, 'delete');
 Router::get('notifications/unread', NotificationsController::class, 'unreadJson');
 
-// Permissions
-Router::get('permissions',    PermissionController::class, 'list');
-Router::post('permissions',   PermissionController::class, 'update');
-
-// Roles
-Router::get('roles',          RoleController::class, 'list');
-Router::post('roles',         RoleController::class, 'update');
+// Stats
 Router::get('stats',          StatsController::class, 'dashboard');

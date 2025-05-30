@@ -29,14 +29,10 @@ Projekt zrealizowano w czystym PHP 8+, z wykorzystaniem PostgreSQL, konteneryza
 ## Zabezpieczenia
 
 * **Hashowanie haseł**: bcrypt z saltingiem w `src/Repositories/UserRepository.php` i `src/Controllers/AuthController.php`.
-* **Ochrona przed SQL Injection**: parametryzowane zapytania w (`src/Repositories/*Repository.php`).
-* **Zapobieganie XSS**: funkcja `escape()` w `src/Core/View.php` używana w widokach.
-* **Ochrona przed CSRF**: tokeny CSRF (`src/Core/CsrfToken.php`) oraz ukryte pola w formularzach.
-* **Walidacja i sanitacja danych**: `src/Core/Validator.php` i reguły w kontrolerach.
+* **Ochrona przed SQL Injection**: parametryzowane zapytania.
 * **Zarządzanie sesją**: `SessionManager.php` regeneruje identyfikator, ustawia timeout i zabezpieczenia ciasteczek.
 * **HTTPS**: wymuszanie SSL w `docker/nginx/nginx.conf`.
 * **Limity uploadu**: `client_max_body_size` w Nginx i `upload_max_filesize` w PHP-FPM.
-* **Kontrola typów plików**: walidacja MIME w `src/Controllers/UploadController.php`, katalog `public/uploads` chroniony przed wykonaniem PHP.
 * **Content Security Policy (CSP)**: nagłówki w konfiguracji Nginx.
 
 ## Scenariusze użycia

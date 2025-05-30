@@ -17,6 +17,8 @@ class PermissionRepository
         $this->db = $db;
     }
 
+
+    //
     /**
      * @return array<int, array<string, mixed>>
      */
