@@ -224,8 +224,7 @@ Dodawanie trasy
 Edycja trasy
 ![Edycja istniejącej trasy](images/Edytuj_trasę.png "CampTrail – Edytuj trasę")
 
-Widok trasy
-![Mountain View – trasa](images/dest.png "CampTrail – Widok trasy")
+
 
 ## 3. Pojazdy
 
@@ -241,10 +240,13 @@ Edycja kampera
 Szczegóły pojazdu
 ![Szczegóły wybranego pojazdu](images/Szczegóły_pojazdu.png "CampTrail – Szczegóły pojazdu")
 
-##4. Destynacje
+## 4. Destynacje
 
 Lista destynacji
 ![Lista destynacji](images/Destynacje.png "CampTrail – Destynacje")
+
+Widok destynacji
+![Mountain View – destynacja](images/dest.png "CampTrail – Widok destynacji")
 
 Dodawanie destynacji
 ![Formularz nowej destynacji](images/nowa_destynacja.png "CampTrail – Nowa destynacja")
