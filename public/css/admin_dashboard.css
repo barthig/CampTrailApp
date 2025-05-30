@@ -1,0 +1,292 @@
+:root {
+  --bg-start: #dbe9d8;
+  --bg-end: #7ea174;
+  --card-bg: #ffffff;
+  --card-shadow: rgba(0, 0, 0, 0.1);
+  --accent: #557d4d;
+  --accent-dark: #496b3f;
+  --danger: #e74c3c;
+  --danger-dark: #c0392b;
+}
+
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Body & Layout */
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom, var(--bg-start), var(--bg-end));
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-header,
+.admin-footer {
+  background: var(--accent);
+  color: #fff;
+  padding: 1rem 0;
+  text-align: center; 
+}
+
+.admin-header h1,
+.admin-footer p {
+  margin: 0;
+}
+
+.admin-nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.admin-nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+
+.admin-nav a.active,
+.admin-nav a:hover {
+  background: var(--accent-dark);
+  color: #fff;
+}
+
+.admin-main.container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  width: 100%;
+  flex: 1;
+}
+
+/* Flashes */
+.flashes {
+  margin-bottom: 1.5rem;
+}
+.flash {
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+.flash-info {
+  background-color: #d9edf7;
+  color: #31708f;
+}
+.flash-success {
+  background-color: #dff0d8;
+  color: #3c763d;
+}
+.flash-error {
+  background-color: #f2dede;
+  color: #a94442;
+}
+
+/* Sekcje tabel */
+.users-table,
+.campers-table,
+.destinations-table,
+.routes-table,
+.notifications-table {
+  margin-bottom: 2.5rem;
+  background: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px var(--card-shadow);
+  overflow-x: auto;
+}
+
+.users-table h2,
+.campers-table h2,
+.destinations-table h2,
+.routes-table h2,
+.notifications-table h2 {
+  padding: 1rem 1.5rem 0;
+  color: var(--accent-dark);
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+/* Tabele */
+.users-table table,
+.campers-table table,
+.destinations-table table,
+.routes-table table,
+.notifications-table table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0 1.5rem 0;
+}
+thead {
+  background: var(--accent);
+}
+thead th {
+  color: #fff;
+  font-weight: 600;
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  text-align: left;
+  white-space: nowrap;
+}
+tbody tr:nth-child(odd) {
+  background: #fafafa;
+}
+tbody tr:hover {
+  background: #f0f0f0;
+}
+td {
+  padding: 0.75rem 1rem;
+  font-size: 0.9rem;
+  vertical-align: middle;
+  word-break: break-word;
+  white-space: normal;
+  max-width: 200px;
+}
+
+.destinations-table td:nth-child(3) {
+  max-width: 300px;
+}
+.routes-table td:nth-child(3),
+.routes-table td:nth-child(4),
+.routes-table td:nth-child(5) {
+  max-width: 250px;
+}
+.users-table td:nth-child(2),
+.users-table td:nth-child(3) {
+  max-width: 180px;
+}
+.campers-table td:nth-child(2),
+.campers-table td:nth-child(3) {
+  max-width: 220px;
+}
+.notifications-table td:nth-child(3) {
+  max-width: 300px;
+}
+
+/* Akcje */
+td.actions-cell {
+  display: flex;
+  gap: 1rem;
+  white-space: nowrap;
+  align-items: center;
+  flex-wrap: wrap;
+}
+td.actions-cell a {
+  color: #fff;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.1s;
+  display: inline-block;
+  min-width: 70px;
+  text-align: center;
+}
+td.actions-cell a.edit-btn {
+  background: var(--accent);
+}
+td.actions-cell a.edit-btn:hover {
+  background: var(--accent-dark);
+  transform: translateY(-1px);
+}
+td.actions-cell a.delete-btn {
+  background: var(--danger);
+}
+td.actions-cell a.delete-btn:hover {
+  background: var(--danger-dark);
+  transform: translateY(-1px);
+}
+
+/* Linki */
+a {
+  color: var(--accent);
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+/* Nawigacja */
+.admin-nav a,
+.admin-nav a:hover,
+.admin-nav a.active {
+  color: #fff;
+}
+
+a:hover:not(.edit-btn):not(.delete-btn):not(.admin-nav a) {
+  color: var(--accent-dark);
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  table, thead, tbody, tr, td {
+    display: block;
+    width: 100%;
+  }
+  thead {
+    display: none;
+  }
+  tr {
+    margin: 0 1rem 1rem;
+    border-radius: 12px;
+    background: var(--card-bg);
+    box-shadow: 0 4px 12px var(--card-shadow);
+    overflow: hidden;
+  }
+  td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    border-top: 1px solid #eee;
+    word-break: normal;
+    white-space: normal;
+  }
+  td:first-child {
+    border-top: none;
+  }
+  td::before {
+    content: attr(data-label);
+    flex: 1;
+    margin-right: 0.5rem;
+    font-weight: 600;
+    text-transform: capitalize;
+    text-align: left;
+    white-space: normal;
+  }
+  td > * {
+    flex: 2;
+    text-align: right;
+  }
+}
+
+
+@media (max-width: 375px) {
+  .admin-main.container {
+    margin: 0.5rem;
+    padding: 0;
+  }
+  tr {
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  td {
+    padding: 0.5rem 0.75rem;
+  }
+  td::before {
+    font-size: 0.85rem;
+  }
+}

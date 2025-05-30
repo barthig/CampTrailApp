@@ -1,0 +1,199 @@
+
+:root {
+  --gap: 1rem;
+}
+
+/* Reset & base */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: linear-gradient(to bottom, #dbe9d8, #7ea174);
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+}
+
+/* Layout wrapper */
+.page-wrapper {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Content offset for sidebar */
+.content-container {
+  flex: 1;
+  padding: 2rem;
+  padding-left: calc(var(--gap) + 60px);
+  transition: padding 0.3s;
+}
+
+/* Main box */
+.campers-box {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header and add button */
+.campers-box h1 {
+  font-size: 2rem;
+  color: #1f3b10;
+  margin-bottom: var(--gap);
+}
+.campers-box .button {
+  display: inline-block;
+  background-color: #557d4d;
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.2s;
+  margin-bottom: 1.5rem;
+}
+.campers-box .button:hover {
+  background-color: #44693d;
+}
+
+/* Grid of cards */
+.campers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Single card */
+.camper-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s;
+}
+.camper-card:hover {
+  transform: translateY(-4px);
+}
+
+/* Card thumbnail */
+.card-thumb {
+  width: 100%;
+  height: 140px;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #e9f1e5;
+  margin-bottom: var(--gap);
+}
+.card-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Card header */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--gap);
+}
+.card-header h2 {
+  font-size: 1.2rem;
+  color: #1f3b10;
+}
+.camper-type {
+  font-size: 0.9rem;
+  background: #aac9a3;
+  color: #1f3b10;
+  padding: 0.2rem 0.6rem;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+/* Card body */
+.card-body p {
+  margin-bottom: 0.4rem;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+/* Actions */
+.card-actions {
+  margin-top: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.card-actions a,
+.card-actions button {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #557d4d;
+  text-decoration: none;
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+}
+.card-actions .delete-button {
+  color: #c0392b;
+}
+.card-actions a:hover,
+.card-actions .delete-button:hover {
+  text-decoration: underline;
+}
+
+/* Flash messages */
+.flash {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+}
+.flash.success { background: #dff0d8; color: #3c763d; }
+.flash.error   { background: #f2dede; color: #a94442; }
+
+/* Empty state */
+.empty-state {
+  text-align: center;
+  padding: 2rem;
+}
+.empty-state p {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+
+@media (max-width: 768px) {
+  .content-container {
+    padding: var(--gap);
+    padding-left: var(--gap);
+    padding-bottom: calc(var(--gap) + 60px);
+  }
+  .campers-box {
+    padding: 1rem;
+  }
+  .campers-grid {
+    gap: var(--gap);
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 600px) {
+  .camper-card {
+    padding: 1rem;
+  }
+  .card-header h2 {
+    font-size: 1rem;
+  }
+  .card-body p {
+    font-size: 0.85rem;
+  }
+  .card-actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

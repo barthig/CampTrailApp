@@ -1,0 +1,237 @@
+:root {
+  --sidebar-width: 72px;
+  --bg-start: #dbe9d8;
+  --bg-end: #7ea174;
+  --card-bg: #fff;
+  --card-shadow: rgba(0, 0, 0, 0.1);
+  --accent: #557d4d;
+  --text-color: #333;
+  --border-color: #aac9a3;
+  --primary-hover: #496b3f;
+  --secondary-color: #f0f0f0;
+  --danger: #d9534f;
+  --danger-hover: #c9302c;
+  --input-height: 2.5rem;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom, var(--bg-start), var(--bg-end));
+  display: flex;
+  min-height: 100vh;
+  color: var(--text-color);
+}
+
+.page-wrapper {
+  display: flex;
+  width: 100%;
+}
+
+.content-container {
+  margin-left: var(--sidebar-width);
+  padding: 2rem;
+  flex: 1;
+  overflow-y: auto;
+}
+
+
+.avatar-wrapper {
+  text-align: center;
+  margin: 2rem auto;
+}
+
+.avatar-wrapper img.avatar-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px var(--card-shadow);
+}
+
+
+.profile-form fieldset,
+.emergency-contact-form fieldset,
+.avatar-form fieldset,
+.password-form fieldset,
+.notifications-settings fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+}
+
+
+.profile-form,
+.password-form,
+.emergency-contact-form,
+.notifications-settings,
+.avatar-form,
+.danger-zone {
+  background: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px var(--card-shadow);
+  padding: 2rem;
+  max-width: 800px;
+  margin: 2rem auto;
+}
+
+.profile-form legend,
+.emergency-contact-form legend,
+.password-form legend,
+.notifications-settings h2,
+.avatar-form legend {
+  font-size: 1.75rem;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.form-group,
+.checkbox-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label,
+.checkbox-group label {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  display: block;
+  color: var(--accent);
+}
+
+.form-group input,
+.form-group textarea,
+.checkbox-group input {
+  width: 100%;
+  padding: 0.6rem;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-size: 1rem;
+  color: var(--text-color);
+  height: var(--input-height);
+  background: var(--card-bg);
+}
+
+.form-group textarea {
+  min-height: 120px;
+  resize: vertical;
+  padding-top: 0.75rem;
+  height: auto;
+}
+
+.checkbox-group input {
+  width: auto;
+  margin-right: 0.5rem;
+  height: auto;
+}
+
+
+
+.password-form .form-group {
+  margin-bottom: 1.5rem;
+}
+
+.password-requirements {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.password-requirements ul {
+  margin-top: 0.5rem;
+  padding-left: 1.25rem;
+}
+
+.notifications-settings {
+  padding: 1.5rem;
+}
+
+.notifications-settings .checkbox-group {
+  display: flex;
+  align-items: center;
+}
+
+.notifications-settings button {
+  margin-top: 1rem;
+}
+
+.danger-zone {
+  text-align: center;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: background 0.2s;
+  cursor: pointer;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  border: none;
+}
+
+.button.primary {
+  background: var(--accent);
+  color: #fff;
+}
+
+.button.primary:hover {
+  background: var(--primary-hover);
+}
+
+
+.button.danger {
+  background: var(--danger);
+  color: #fff;
+}
+
+.button.danger:hover {
+  background: var(--danger-hover);
+}
+
+.flash {
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.flash.success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.flash.error,
+.alert-danger {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+.back-link {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+  .profile-form,
+  .emergency-contact-form,
+  .password-form,
+  .notifications-settings,
+  .avatar-form,
+  .danger-zone {
+    margin: 1rem;
+    padding: 1rem;
+  }
+  .content-container {
+    padding: 1rem;
+    margin-left: 0px;
+    margin-bottom: 60px;
+  }
+}

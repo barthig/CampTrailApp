@@ -1,0 +1,120 @@
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 60px;
+  height: 100vh;
+  background-color: #3e5d2f;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  z-index: 1000;
+}
+
+/* Logo */
+.sidebar-logo {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.sidebar-logo img {
+  max-width: 50px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Menu ikon */
+.sidebar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.sidebar ul li {
+  margin: 1rem 0;
+}
+.sidebar ul li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  color: #fff;
+  font-size: 1.4rem;
+  transition: background 0.3s, color 0.3s;
+  text-decoration: none;
+}
+.sidebar ul li a:hover,
+.sidebar ul li a.active {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #c2e0c6;
+}
+
+/* Profil + wylogowanie na dole */
+.sidebar-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.sidebar-bottom .profile-link,
+.sidebar-bottom .logout-link {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1.4rem;
+  transition: background 0.3s, color 0.3s;
+}
+.sidebar-bottom .profile-link {
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+.sidebar-bottom .profile-link img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.sidebar-bottom .logout-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #c2e0c6;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    top: auto;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 0;
+  }
+
+  .sidebar-logo {
+    display: none;
+  }
+
+  .sidebar ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .sidebar ul li {
+    margin: 0;
+  }
+
+  .sidebar-bottom {
+    display: none;
+  }
+}

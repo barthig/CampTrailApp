@@ -1,0 +1,206 @@
+:root {
+  --form-max-width: 800px;
+  --bg-form: #fff;
+  --accent-color: #557d4d;
+  --text-color: #333;
+  --border-color: #aac9a3;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --input-padding: 0.6rem;
+  --radius: 6px;
+  --gap: 1rem;
+
+  /* flash messages */
+  --flash-error-bg: #f9e6e6;
+  --flash-error-border: #ddb2b2;
+  --flash-error-text: #a12f2f;
+}
+
+/* Reset & Box Sizing */
+*, *::before, *::after { box-sizing: border-box; }
+
+/* Content container offset to accommodate sidebar */
+.content-container {
+  padding: var(--gap);
+  padding-left: calc(var(--gap) + 60px);
+}
+
+body {
+  margin: 0;
+   font-family: 'Segoe UI', sans-serif;
+  color: var(--text-color);
+  background: linear-gradient(to bottom, #dbe9d8, #7ea174);
+  line-height: 1.5;
+}
+
+/* Flash Messages */
+.flash {
+  max-width: var(--form-max-width);
+  margin: var(--gap) auto;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius);
+}
+.flash.error {
+  background: var(--flash-error-bg);
+  border: 1px solid var(--flash-error-border);
+  color: var(--flash-error-text);
+}
+
+/* FORM STYLES */
+.camper-form {
+  background: var(--bg-form);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px var(--shadow-color);
+  padding: 2rem;
+  max-width: var(--form-max-width);
+  margin: 2rem auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+}
+
+.form-header {
+  margin-bottom: var(--gap);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.form-header h1 {
+  margin: 0 0 0.5rem;
+  color: #1f3b10;
+  font-size: 1.75rem;
+}
+.subtext {
+  margin: 0;
+  color: var(--text-color);
+  font-size: 1rem;
+}
+
+/* Form Group */
+.form-group { margin-bottom: var(--gap); }
+label,
+legend {
+  font-weight: 600;
+  color: var(--accent-color);
+  margin-bottom: 0.5rem;
+  display: block;
+}
+input[type="text"],
+input[type="number"],
+input[type="date"],
+input[type="file"],
+input[type="hidden"] {
+  width: 100%;
+  padding: var(--input-padding);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  font-size: 1rem;
+}
+
+/* Fieldsets */
+fieldset {
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  padding: var(--gap);
+  margin-bottom: var(--gap);
+}
+fieldset legend {
+  padding: 0 0.5rem;
+  background: var(--bg-form);
+}
+
+/* Two-column Layout */
+.two-cols {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+  gap: var(--gap);
+}
+
+/* Existing Images Gallery */
+.existing-images {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: var(--gap);
+  margin-bottom: var(--gap);
+}
+.existing-images .thumb {
+  text-align: center;
+}
+.existing-images .thumb img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  box-shadow: 0 2px 6px var(--shadow-color);
+}
+.existing-images .thumb small {
+  display: block;
+  margin-top: 0.25rem;
+  color: var(--text-color);
+  font-size: 0.85rem;
+}
+
+/* Form Actions */
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--gap);
+  margin-top: var(--gap);
+}
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: var(--radius);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+  text-decoration: none;
+}
+.button.primary {
+  background: var(--accent-color);
+  color: #fff;
+}
+.button.primary:hover {
+  background: #496b3f;
+}
+.button.secondary {
+  background: #f0f0f0;
+  color: var(--text-color);
+}
+.button.secondary:hover {
+  background: #e0e0e0;
+}
+
+
+@media (max-width: 768px) {
+ 
+  .content-container {
+    padding: var(--gap);
+    padding-left: var(--gap);
+    padding-bottom: calc(var(--gap) + 60px);
+  }
+  .camper-form {
+    padding: 1rem;
+    margin: 1rem;
+    gap: 0.75rem;
+  }
+  .two-cols {
+    grid-template-columns: 1fr;
+  }
+  .form-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+@media (max-width: 480px) {
+  .form-header h1 {
+    font-size: 1.5rem;
+  }
+  .button {
+    width: 100%;
+  }
+}

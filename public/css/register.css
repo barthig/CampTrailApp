@@ -1,0 +1,243 @@
+:root {
+  --sidebar-width:           72px;
+  --sidebar-collapsed-width: 60px;
+  --bg-start:                #dbe9d8;
+  --bg-end:                  #7ea174;
+  --card-bg:                 #ffffff;
+  --backdrop-color:          rgba(255,255,255,0.05);
+  --backdrop-blur:           5px;
+  --card-shadow:             rgba(0, 0, 0, 0.1);
+  --accent:                  #557d4d;
+  --accent-hover:            #44693d;
+  --text-color:              #333333;
+  --gap:                     1rem;
+}
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+body.page-register {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom, var(--bg-start), var(--bg-end));
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 1rem;
+}
+
+
+.register-main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: var(--sidebar-width);
+  padding: 2rem;
+  transition: margin-left 0.3s, padding 0.3s;
+}
+
+
+.login-container {
+  background-color: var(--backdrop-color);
+  backdrop-filter: blur(var(--backdrop-blur));
+  border-radius: 12px;
+  padding: 2rem;
+  max-width: 640px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.login-box {
+  background: var(--card-bg);
+  border-radius: 16px;
+  box-shadow: 0 8px 20px var(--card-shadow);
+  padding: 2.5rem;
+  width: 100%;
+  text-align: center;
+}
+
+
+.logo-container img {
+  max-width: 120px;
+  height: auto;
+  margin: 0 auto 1rem;
+  display: block;
+}
+
+
+.login-box h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--accent);
+}
+
+
+.error {
+  color: #a12f2f;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  text-align: left;
+}
+
+
+.error-messages {
+  display: none;
+  margin-bottom: 1rem;
+  color: #c00;
+  text-align: left;
+}
+
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+  width: 100%;
+}
+
+.input-group {
+  width: 100%;
+}
+.input-group input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+}
+.input-group input:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: center;
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+}
+
+
+button[type="submit"] {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: var(--accent);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+button[type="submit"]:hover {
+  background-color: var(--accent-hover);
+}
+
+.links {
+  margin-top: var(--gap);
+  font-size: 0.9rem;
+  text-align: center;
+}
+.links a {
+  color: var(--accent);
+  text-decoration: none;
+  margin: 0 0.5rem;
+}
+.links a:hover {
+  color: var(--accent-hover);
+  text-decoration: underline;
+}
+
+footer {
+  margin-left: var(--sidebar-width);
+  margin-top: var(--gap);
+  text-align: center;
+  transition: margin-left 0.3s, padding 0.3s;
+}
+
+
+@media (max-width: 1024px) {
+  .register-main {
+    margin-left: 0;
+    padding: var(--gap);
+    padding-top: calc(var(--sidebar-collapsed-width) + var(--gap));
+  }
+  footer {
+    margin-left: 60px;
+    padding: var(--gap) 1rem;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .register-main {
+    padding: var(--gap);
+  }
+  .login-container {
+    padding: var(--gap);
+    max-width: 100%;
+  }
+  .login-box {
+    padding: 2rem;
+  }
+  .logo-container img {
+    max-width: 90px;
+  }
+  .login-box h1 {
+    font-size: 1.25rem;
+  }
+  .input-group input,
+  button[type="submit"] {
+    padding: 0.65rem;
+    font-size: 0.95rem;
+  }
+  .checkbox-group,
+  .links {
+    font-size: 0.85rem;
+  }
+   footer {
+    padding: var(--gap);
+    margin-left: 0px;
+    margin-bottom: 60px;
+  }
+}
+
+
+@media (max-width: 480px) {
+  body.page-register {
+    padding: 1rem;
+  }
+  .login-container {
+    padding: 1.5rem;
+  }
+  .login-box {
+    padding: 1.5rem;
+  }
+  .login-box h1 {
+    font-size: 1.1rem;
+  }
+  .input-group input,
+  button[type="submit"] {
+    padding: 0.6rem;
+    font-size: 0.9rem;
+  }
+  .links {
+    font-size: 0.8rem;
+  }
+}

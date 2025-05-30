@@ -1,0 +1,232 @@
+:root {
+  --sidebar-width:           72px;
+  --sidebar-collapsed-width: 60px;
+  --bg-start:                #dbe9d8;
+  --bg-end:                  #7ea174;
+  --card-bg:                 #ffffff;
+  --card-shadow:             rgba(0, 0, 0, 0.1);
+  --accent:                  #557d4d;
+  --accent-dark:             #496b3f;
+  --danger:                  #e74c3c;
+  --danger-dark:             #c0392b;
+  --text-color:              #333333;
+  --gap:                     1rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom, var(--bg-start), var(--bg-end));
+  color: var(--text-color);
+  display: flex;
+  min-height: 100vh;
+}
+
+.content-container {
+  margin-left: var(--sidebar-width);
+  padding: 2rem;
+  flex: 1;
+  overflow-y: auto;
+  transition: margin-left 0.3s, padding 0.3s;
+}
+
+
+.routes-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--gap);
+  margin-bottom: 1.5rem;
+}
+
+.routes-header h1 {
+  font-size: 2rem;
+  color: #1f3b10;
+}
+
+.button.new-route {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--accent);
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background 0.2s, transform 0.1s;
+}
+.button.new-route:hover {
+  background: var(--accent-dark);
+  transform: translateY(-1px);
+}
+
+.empty-state {
+  text-align: center;
+  background: var(--card-bg);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px var(--card-shadow);
+}
+.empty-state p {
+  margin-bottom: 1rem;
+  color: #555;
+}
+.empty-state .button.new-route {
+  margin-top: 0.5rem;
+}
+
+.routes-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--card-bg);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px var(--card-shadow);
+  transition: all 0.3s;
+}
+
+.routes-table thead {
+  background: var(--accent);
+}
+.routes-table thead th {
+  color: #fff;
+  font-weight: 600;
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+.routes-table tbody tr:nth-child(odd) {
+  background: #fafafa;
+}
+.routes-table tbody tr:hover {
+  background: #f0f0f0;
+}
+
+.routes-table td {
+  padding: 0.75rem 1rem;
+  font-size: 0.9rem;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+
+.actions-cell {
+  display: flex;
+  gap: 0.5rem;
+  white-space: nowrap;
+}
+.action-btn.edit,
+.action-btn.delete {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.1s;
+}
+.action-btn.edit {
+  background: var(--accent);
+  color: #fff;
+}
+.action-btn.edit:hover {
+  background: var(--accent-dark);
+  transform: translateY(-1px);
+}
+.action-btn.delete {
+  background: var(--danger);
+  color: #fff;
+}
+.action-btn.delete:hover {
+  background: var(--danger-dark);
+  transform: translateY(-1px);
+}
+
+
+@media (max-width: 1024px) {
+  .content-container {
+    margin-left: var(--sidebar-width);
+    padding: var(--gap);
+    
+  }
+  .routes-header {
+    margin-top: 0;
+  }
+  
+  .routes-table td {
+    white-space: normal;
+    word-break: break-word;
+  }
+}
+
+@media (max-width: 768px) {
+  .content-container {
+    margin-left: 0px;
+    
+  }
+ 
+  .routes-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+    min-width: 100%;
+  }
+  .routes-table thead {
+    display: table-header-group;
+  }
+  .routes-table th,
+  .routes-table td {
+    padding: 0.5rem 0.75rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .routes-table {
+    border: none;
+    box-shadow: none;
+  }
+  .routes-table thead {
+    display: none;
+  }
+  .routes-table,
+  .routes-table tbody,
+  .routes-table tr,
+  .routes-table td {
+    display: block;
+    width: 100%;
+  }
+  .routes-table tr {
+    margin-bottom: var(--gap);
+    background: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px var(--card-shadow);
+    overflow: hidden;
+  }
+  .routes-table td {
+    padding: 0.75rem 1rem;
+    text-align: right;
+    position: relative;
+    border: none;
+    white-space: normal;
+    word-break: break-word;
+  }
+  .routes-table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 1rem;
+    font-weight: 600;
+    color: var(--accent);
+  }
+}

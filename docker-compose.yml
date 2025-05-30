@@ -1,0 +1,62 @@
+services:
+
+  web:
+    build:
+      context: .
+      dockerfile: docker/nginx/Dockerfile
+    ports:
+      - "8080:80"
+    volumes:
+      - ./public:/var/www/html     
+    networks:
+      - pg-network
+    depends_on:
+      - php
+      - db
+
+  db:
+    image: postgres:latest
+    container_name: kamper_db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: kamper_app
+    ports:
+      - "5432:5432"
+    volumes:
+      - pg-data:/var/lib/postgresql/data
+    networks:
+      - pg-network
+    restart: unless-stopped
+
+  php:
+    build:
+      context: .
+      dockerfile: docker/php/Dockerfile
+    volumes:
+      - .:/app                     
+    networks:
+      - pg-network
+    depends_on:
+      - db
+    restart: unless-stopped
+
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: pg-admin2
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@example.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+    ports:
+      - "5051:80"
+    networks:
+      - pg-network
+    restart: unless-stopped
+
+networks:
+  pg-network:
+    driver: bridge
+
+volumes:
+  pg-data:
+    driver: local

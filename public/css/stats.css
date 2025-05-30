@@ -1,0 +1,184 @@
+
+:root {
+  --sidebar-width:   72px;
+  --bg-start:        #dbe9d8;
+  --bg-end:          #7ea174;
+  --card-bg:         #ffffff;
+  --card-shadow:     rgba(0, 0, 0, 0.1);
+  --accent:          #557d4d;
+  --accent-dark:     #496b3f;
+  --text-color:      #333;
+  --text-muted:      #888;
+  --transition-fast: 0.2s ease-in-out;
+}
+
+/* Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Page layout */
+.page-wrapper {
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, var(--bg-start), var(--bg-end));
+  color: var(--text-color);
+}
+
+.content-container {
+  margin-left: var(--sidebar-width);
+  padding: 2rem;
+  flex: 1;
+  overflow-y: auto;
+}
+
+
+
+/* Header */
+.stats-header h1 {
+  font-size: 2rem;
+  color: var(--accent-dark);
+  margin-bottom: 1.5rem;
+}
+
+/* Filters */
+.stats-filters {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.stats-filters label {
+  font-weight: 600;
+  color: var(--accent-dark);
+}
+
+.stats-filters select {
+  padding: 0.4rem 0.6rem;
+  border: 1px solid #8aa47a;
+  border-radius: 6px;
+  background: #fff;
+  font-size: 1rem;
+}
+
+/* Apply button */
+.button.apply {
+  background: var(--accent);
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background var(--transition-fast), transform var(--transition-fast);
+}
+
+.button.apply:hover {
+  background: var(--accent-dark);
+  transform: translateY(-1px);
+}
+
+/* Year summary card */
+.year-summary {
+  background: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px var(--card-shadow);
+  margin-bottom: 2rem;
+}
+
+.year-summary h2 {
+  margin: 0 0 0.75rem;
+  color: var(--accent);
+  font-size: 1.5rem;
+}
+
+.year-summary p {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+}
+
+/* Statistics table */
+.stats-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--card-bg);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px var(--card-shadow);
+  margin-bottom: 2rem;
+}
+
+.stats-table thead {
+  background: var(--accent);
+}
+
+.stats-table thead th {
+  color: #fff;
+  font-weight: 600;
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+.stats-table tbody tr:nth-child(odd) {
+  background: #fafafa;
+}
+
+.stats-table tbody tr:nth-child(even) {
+  background: #fff;
+}
+
+.stats-table tbody tr:hover {
+  background: #f0f0f0;
+}
+
+.stats-table td {
+  padding: 0.75rem 1rem;
+  font-size: 0.9rem;
+}
+
+.stats-table td span.text-muted {
+  color: var(--text-muted);
+}
+
+/* Responsive: table as list on small screens */
+@media (max-width: 600px) {
+  .content-container{
+    margin-left: 0px;
+  }
+  .stats-table thead {
+    display: none;
+  }
+
+  .stats-table,
+  .stats-table tbody,
+  .stats-table tr,
+  .stats-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .stats-table tr {
+    margin-bottom: 1rem;
+  }
+
+  .stats-table td {
+    padding-left: 50%;
+    text-align: right;
+    position: relative;
+  }
+
+  .stats-table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 1rem;
+    font-weight: 600;
+    text-align: left;
+  }
+}
