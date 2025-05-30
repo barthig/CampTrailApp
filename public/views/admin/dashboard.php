@@ -209,7 +209,7 @@
 
     <footer class="admin-footer">
         <div class="container">
-            <p>&copy; <?= date('Y') ?> Twoja Aplikacja</p>
+            <p>&copy; <?= date('Y') ?> CampTrail</p>
         </div>
     </footer>
 </body>

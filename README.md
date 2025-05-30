@@ -189,7 +189,65 @@ Implementacja: `ProfileController::exportDb()` uruchamia `pg_dump --no-owner --n
    ```bash
    type .\init.sql | docker exec -i kamper_db psql -U postgres -d kamper_app
    ```
+Schemat bazy danych
 
+
+
+Rys. 1: Schemat ERD bazy danych aplikacji CampTrail.
+
+Zrzuty ekranu aplikacji CampTrail
+
+1. Autentykacja
+
+Logowanie![Ekran logowania](./images/Screenshot 2025-05-30 at 11-46-53 Logowanie – CampTrail.png "CampTrail – Logowanie")
+
+Rejestracja![Ekran rejestracji](./images/Screenshot 2025-05-30 at 11-47-04 Rejestracja – CampTrail.png "CampTrail – Rejestracja")
+
+Reset hasła![Reset hasła](./images/Screenshot 2025-05-30 at 11-47-12 Reset Hasła – CampTrail.png "CampTrail – Reset hasła")
+
+2. Trasy
+
+Strona główna![Strona główna CampTrail](./images/Screenshot 2025-05-30 at 11-46-43 CampTrail – Strona Główna.png "CampTrail – Strona główna")
+
+Dashboard![Główny pulpit użytkownika](./images/Screenshot 2025-05-30 at 11-47-47 CampTrail Dashboard.png "CampTrail – Dashboard")
+
+Twoje trasy![Lista tras użytkownika](./images/Screenshot 2025-05-30 at 11-48-29 Twoje Trasy – CampTrail.png "CampTrail – Twoje trasy")
+
+Dodawanie trasy![Formularz nowej trasy](./images/Screenshot 2025-05-30 at 11-48-38 Nowa trasa – CampTrail.png "CampTrail – Nowa trasa")
+
+Edycja trasy![Edycja istniejącej trasy](./images/Screenshot 2025-05-30 at 11-48-56 Edytuj trasę – CampTrail.png "CampTrail – Edytuj trasę")
+
+Widok trasy![Mountain View – trasa](./images/Screenshot 2025-05-30 at 11-48-20 Mountain View – CampTrail.png "CampTrail – Widok trasy")
+
+3. Pojazdy
+
+Przegląd pojazdów![Przegląd pojazdów](./images/Screenshot 2025-05-30 at 11-49-03 Pojazdy – CampTrail.png "CampTrail – Pojazdy")
+
+Dodawanie kampera![Formularz nowego kampera](./images/Screenshot 2025-05-30 at 11-49-09 Nowy kamper – CampTrail.png "CampTrail – Nowy kamper")
+
+Edycja kampera![Edycja danych kampera](./images/Screenshot 2025-05-30 at 11-49-17 Edytuj kamper – CampTrail.png "CampTrail – Edytuj kamper")
+
+Szczegóły pojazdu![Szczegóły wybranego pojazdu](./images/Screenshot 2025-05-30 at 12-11-18 Szczegóły pojazdu – CampTrail.png "CampTrail – Szczegóły pojazdu")
+
+4. Destynacje
+
+Lista destynacji![Lista destynacji](./images/Screenshot 2025-05-30 at 12-05-47 Destynacje – CampTrail.png "CampTrail – Destynacje")
+
+Dodawanie destynacji![Formularz nowej destynacji](./images/Screenshot 2025-05-30 at 12-08-04 Nowa destynacja – CampTrail.png "CampTrail – Nowa destynacja")
+
+5. Profil
+
+Mój profil (podgląd)![Podgląd profilu użytkownika](./images/Screenshot 2025-05-30 at 11-56-22 Mój Profil – CampTrail.png "CampTrail – Mój profil")
+
+Edycja profilu![Ekran edycji profilu](./images/Screenshot 2025-05-30 at 12-13-42 Edytuj profil – CampTrail.png "CampTrail – Edytuj profil")
+
+Ponowny podgląd profilu![Ponowny podgląd profilu](./images/Screenshot 2025-05-30 at 12-01-33 Mój Profil – CampTrail.png "CampTrail – Mój profil")
+
+6. Inne
+
+Powiadomienia![Panel powiadomień](./images/Screenshot 2025-05-30 at 11-49-40 Powiadomienia – CampTrail.png "CampTrail – Powiadomienia")
+
+Panel administratora![Panel administratora](./images/Screenshot 2025-05-30 at 12-00-45 Panel Administratora.png "CampTrail – Panel administratora")
 ## Autor
 
 * Bartosz Filipak

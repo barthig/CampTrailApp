@@ -134,6 +134,7 @@ html, body {
   gap: 1rem;
   margin-bottom: 1.5rem;
 }
+.profile-details .btn,
 .actions .btn {
   display: inline-flex;
   align-items: center;

@@ -39,7 +39,9 @@ body {
   flex: 1;
   overflow-y: auto;
 }
-
+.content-container h1{
+  color: var(--accent);
+}
 
 .avatar-wrapper {
   text-align: center;

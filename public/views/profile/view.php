@@ -78,7 +78,7 @@ use src\Core\SessionManager;
             <li><strong>Telefon:</strong> <span><?= htmlspecialchars($contact['phone']) ?></span></li>
             <li><strong>Relacja:</strong> <span><?= htmlspecialchars($contact['relation']) ?></span></li>
           <?php else: ?>
-            <li><em>Brak danych kontaktu alarmowego. <a href="/profile/edit">Dodaj kontakt alarmowy</a></em></li>
+            <li>Brak danych kontaktu alarmowego. <a href="/profile/edit" class="btn">Dodaj kontakt alarmowy</a></li>
           <?php endif; ?>
 
           <?php if (!empty($user['role_name']) && $user['role_name'] === 'admin'): ?>

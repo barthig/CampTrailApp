@@ -42,7 +42,7 @@
 /* Header */
 .stats-header h1 {
   font-size: 2rem;
-  color: var(--accent-dark);
+  color: var(--accent);
   margin-bottom: 1.5rem;
 }
 
