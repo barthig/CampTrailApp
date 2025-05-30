@@ -194,9 +194,9 @@ Implementacja: `ProfileController::exportDb()` uruchamia `pg_dump --no-owner --n
 
 ![erd](images/ERD.png)
 
-Zrzuty ekranu aplikacji CampTrail
+### Zrzuty ekranu aplikacji CampTrail
 
-##1. Autentykacja
+## 1. Autentykacja
 
 Logowanie
 ![Ekran logowania](images/Logowanie.png )
@@ -207,7 +207,7 @@ Rejestracja
 Reset hasła
 ![Reset hasła](images/Reset_Hasła.png "CampTrail – Reset hasła")
 
-##2. Trasy
+## 2. Trasy
 
 Strona główna
 ![Strona główna CampTrail](images\Strona_Główna.png "CampTrail – Strona główna")
@@ -227,7 +227,7 @@ Edycja trasy
 Widok trasy
 ![Mountain View – trasa](images/dest.png "CampTrail – Widok trasy")
 
-##3. Pojazdy
+## 3. Pojazdy
 
 Przegląd pojazdów
 ![Przegląd pojazdów](images/Pojazdy.png "CampTrail – Pojazdy")
@@ -249,7 +249,7 @@ Lista destynacji
 Dodawanie destynacji
 ![Formularz nowej destynacji](images/nowa_destynacja.png "CampTrail – Nowa destynacja")
 
-##5. Profil
+## 5. Profil
 
 Mój profil
 ![Podgląd profilu użytkownika](images/Mój_Profil.png "CampTrail – Mój profil")
@@ -260,7 +260,7 @@ Edycja profilu
 Mój profil admin
 ![Ponowny podgląd profilu](images/admin_profil.png "CampTrail – Mój profil")
 
-##6. Inne
+## 6. Inne
 
 Powiadomienia![Panel powiadomień](images/Powiadomienia.png "CampTrail – Powiadomienia")
 
